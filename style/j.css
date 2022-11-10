@@ -1,0 +1,986 @@
+.wrapper {
+    --color: #1f242d;
+    --color-invert: #ffffff;
+    --clip-path: circle(15px at left);
+    --clip-path-hover: circle(70px at left);
+    --clip-path-clicked: circle(100vw at left);
+    --duration: 0.4s;
+    --timing-function: ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .wrapper .video {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+    -webkit-clip-path: var(--clip-path);
+            clip-path: var(--clip-path);
+    transition: -webkit-clip-path var(--duration) var(--timing-function);
+    transition: clip-path var(--duration) var(--timing-function);
+    transition: clip-path var(--duration) var(--timing-function), -webkit-clip-path var(--duration) var(--timing-function);
+  }
+  .wrapper .video video {
+    position: absolute;
+    background: #c4cbde;
+    top: 50%;
+    left: 50%;
+    min-width: 80%;
+    min-height: 80%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    box-shadow: 0px 7.18523px 12px 6px rgba(0, 0, 0, 0.175);
+  }
+  .wrapper .text {
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    opacity: var(--opacity, 1);
+    transition: opacity 0.3s var(--timing-function) 0.2s;
+  }
+  .wrapper .text::before, .wrapper .text::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    right: 25px;
+    height: 0;
+  }
+  .wrapper .text::before {
+    box-shadow: 26px 0 0 1px var(--color);
+    right: var(--r, 100%);
+    opacity: var(--opacity, 0);
+    transition: right 0.5s ease-in, opacity 0.1s linear;
+  }
+  .wrapper .text::after {
+    box-shadow: 26px 0 0 1px var(--color-invert);
+    -webkit-clip-path: var(--clip-path);
+            clip-path: var(--clip-path);
+    transition: -webkit-clip-path var(--duration) var(--timing-function);
+    transition: clip-path var(--duration) var(--timing-function);
+    transition: clip-path var(--duration) var(--timing-function), -webkit-clip-path var(--duration) var(--timing-function);
+  }
+  .wrapper .text > span::before, .wrapper .text > span::after {
+    content: attr(data-text);
+    padding-left: 26px;
+    font-family: "mb";
+  }
+  .wrapper .text > span::before {
+    color: var(--color);
+  }
+  .wrapper .text > span::after {
+    color: var(--color-invert);
+    -webkit-clip-path: var(--clip-path);
+            clip-path: var(--clip-path);
+    transition: -webkit-clip-path var(--duration) var(--timing-function);
+    transition: clip-path var(--duration) var(--timing-function);
+    transition: clip-path var(--duration) var(--timing-function), -webkit-clip-path var(--duration) var(--timing-function);
+    position: absolute;
+    left: 0;
+  }
+  .wrapper input {
+    width: 220px;
+    height: 40px;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-radius: 40px;
+    outline: none;
+    z-index: 2;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    cursor: pointer;
+  }
+  .wrapper input:focus {
+    outline: 0;
+  }
+  .wrapper input:hover ~ .video {
+    -webkit-clip-path: var(--clip-path-hover);
+            clip-path: var(--clip-path-hover);
+  }
+  .wrapper input:hover ~ .text::before {
+    --r: 25px;
+    --opacity: 1;
+  }
+  .wrapper input:hover ~ .text::after {
+    -webkit-clip-path: var(--clip-path-hover);
+            clip-path: var(--clip-path-hover);
+  }
+  .wrapper input:hover ~ .text > span::after {
+    -webkit-clip-path: var(--clip-path-hover);
+            clip-path: var(--clip-path-hover);
+  }
+  .wrapper input:checked {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+  .wrapper input:checked ~ .video {
+    -webkit-clip-path: var(--clip-path-clicked);
+            clip-path: var(--clip-path-clicked);
+  }
+  .wrapper input:checked ~ .text {
+    --opacity: 0;
+    transition: opacity 0.3s var(--timing-function);
+  }
+  .wrapper input:checked ~ .text::after {
+    -webkit-clip-path: var(--clip-path-clicked);
+            clip-path: var(--clip-path-clicked);
+  }
+  .wrapper input:checked ~ .text > span::after {
+    -webkit-clip-path: var(--clip-path-clicked);
+            clip-path: var(--clip-path-clicked);
+  }
+  
+ 
+
+
+
+
+
+
+  @-webkit-keyframes load-color {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes load-color {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @-webkit-keyframes text-change {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  @keyframes text-change {
+    0% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+  @-webkit-keyframes color-change {
+    0% {
+      background: linear-gradient(97.96deg, #1de086 -4.65%, #12c672 121.83%);
+    }
+    100% {
+      background: #1de086;
+    }
+  }
+  @keyframes color-change {
+    0% {
+      background: linear-gradient(97.96deg, #1de086 -4.65%, #12c672 121.83%);
+    }
+    100% {
+      background: #1de086;
+    }
+  }
+
+  .buttondow {
+    font-family: Tahoma;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    padding: 14px 72px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    transform: translate(1%, -1%);
+    color: transparent;
+    border: none;
+    outline: none;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 12%);
+    background: linear-gradient(97.96deg, #B0C2F2 57.27%, #E1CFFF 121.83%);
+    border-radius: 10px;
+    
+  }
+  .button-download-main:hover {
+    animation-name: download;
+   animation-duration:1s;
+   animation-iteration-count:inherit;
+   box-shadow: 2px #bf97ff;
+  }
+  .buttondow::after {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    content: "";
+    background: linear-gradient(97.96deg, #1de086 -4.65%, #12c672 121.83%);
+  }
+  
+  .button--inner {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: none;
+    display: flex;
+    align-items: center;
+  }
+  .button--inner img {
+    margin-left: 20px;
+  }
+  .button__text {
+    line-height: 48px;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    text-align: center;
+    color: rgb(29, 29, 29);
+    background: none;
+    font-family: "sh";
+    margin-right: 20px;
+  }
+  
+  .active .buttondow {
+    background-color: #14a6da;
+  }
+  .active1 .btnd1::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+  
+  .active2 .btnd2::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active3 .btnd3::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+  .active1 .btni1 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active2 .btni2 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active3 .btni3 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+
+
+
+  .active4 .btnd4::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+  
+  .active5 .btnd5::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active6 .btnd6::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+  .active4 .btni4 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active5 .btni5 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active6 .btni6 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+
+
+  .active7 .btnd7::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+  
+  .active8 .btnd8::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active9 .btnd9::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+  .active7 .btni7 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active8 .btni8 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active9 .btni9 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+
+  .active10 .btnd10::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+  
+  .active11 .btnd11::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active12 .btnd12::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+  .active10 .btni10 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active11 .btni11 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active12 .btni12 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+
+  .active13 .btnd13::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+  
+  .active14 .btnd14::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active15 .btnd15::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+  .active13 .btni13 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active14 .btni14 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active15 .btni15 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+
+
+
+
+  .active16 .btnd16::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+  
+  .active17 .btnd17::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active18 .btnd18::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+  .active16 .btni16 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active17 .btni17 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active18 .btni18 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active19 .btnd19::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+  
+  .active20 .btnd20::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active21 .btnd21::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+  .active19 .btni19 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active20 .btni20 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active21 .btni21 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+
+
+
+
+
+  .active22 .btnd22::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+  
+  .active23 .btnd23::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active24 .btnd24::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+  .active22 .btni22 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active23 .btni23 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active24 .btni24 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+
+
+
+
+
+  .active25 .btnd25::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+  
+  .active26 .btnd26::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active27 .btnd27::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+  .active25 .btni25 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active26 .btni26 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active27 .btni27 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+
+
+
+
+  .active28 .btnd28::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+  
+  .active29 .btnd29::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+  .active30 .btnd30::after {
+    -webkit-animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+            animation: load-color 2s ease-out forwards, color-change 0.3s ease-out 2.1s forwards;
+  }
+
+  .active28 .btni28 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active29 .btni29 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+  .active30 .btni30 {
+    -webkit-animation: text-change 0.3s ease-out 2.1s forwards;
+            animation: text-change 0.3s ease-out 2.1s forwards;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.custom-btn {
+  background: transparent;
+  color:white;
+}
+
+
+
+  .btn-12{
+    position: relative;
+    right: 20px;
+    bottom: 20px;
+    border:none;
+    box-shadow: none;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    -webkit-perspective: 230px;
+    perspective: 230px;
+  }
+  .btn-12 div {
+    background: linear-gradient(97.96deg, #62A1FF -4.65%, #0066FF 121.83%);
+    display: block;
+    position: absolute;
+    width: 114px;
+    height: 40px;
+    border-radius: 5px;
+    margin: 0;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .btn-12 div:nth-child(1) {
+    
+    -webkit-transform: rotateX(90deg);
+    -moz-transform: rotateX(90deg);
+    transform: rotateX(90deg) translateY(3px) translateZ(-1px);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+    font-family: "sh";
+  }
+  .btn-12 div:nth-child(2) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+  }
+  .btn-12:hover div:nth-child(1) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg) translateY(3px) translateZ(0px);
+    z-index: 2;
+    background: linear-gradient(97.96deg, #71aaff -4.65%, #3485ff 121.83%);
+    font-family: "sh";
+  }
+  .btn-12:hover div:nth-child(2) {
+   color: transparent;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+  
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media screen 
+  and (device-width: 320px) 
+  and (device-height: 640px)  {
+
+    .btn-12 div {
+      width: 65px;
+      height: 32px;
+      font-size: 10px;
+    }
+    
+    .btn-12 div:nth-child(1) {
+
+      transform: rotateX(90deg) translateY(0px) translateZ(-1px);
+   
+    }
+
+
+    .btn-12 {
+      position: relative;
+      right: 20px;
+      bottom: 20px;
+      border: none;
+      box-shadow: none;
+      width: 77px;
+      height: 38px;
+      line-height: 42px;
+      -webkit-perspective: 230px;
+      perspective: 230px;
+  }
+
+
+  .btn-12 div:nth-child(2) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg) translateY(-4px);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+  }
+
+  .btn-12:hover div:nth-child(2) {
+   color: transparent;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg) translateY(10px) translateX(2px);
+  
+  }
+
+
+
+  .buttondow {
+    font-family: Tahoma;
+    font-size: 9px;
+    text-align: center;
+    overflow: hidden;
+    padding: 10px 37px;
+  }
+
+
+  .button--inner img {
+    width: 15px;
+    margin-left: 9px;
+  }
+
+  .button__text {
+    line-height: 33px;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    color: rgb(29, 29, 29);
+    background: none;
+    font-family: "sh";
+    margin-right: 7px;
+}
+
+
+  }
+
+
+  @media screen 
+  and (device-width: 425px) 
+  and (device-height: 667px)  {
+
+    .btn-12 div {
+      width: 65px;
+      height: 32px;
+      font-size: 10px;
+    }
+    
+    .btn-12 div:nth-child(1) {
+
+      transform: rotateX(90deg) translateY(0px) translateZ(-1px);
+   
+    }
+
+
+    .btn-12 {
+      position: relative;
+      right: 20px;
+      bottom: 20px;
+      border: none;
+      box-shadow: none;
+      width: 77px;
+      height: 38px;
+      line-height: 42px;
+      -webkit-perspective: 230px;
+      perspective: 230px;
+  }
+
+
+  .btn-12 div:nth-child(2) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg) translateY(-4px);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+  }
+
+  .btn-12:hover div:nth-child(2) {
+   color: transparent;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg) translateY(10px) translateX(2px);
+  
+  }
+
+
+
+  .buttondow {
+    font-family: Tahoma;
+    font-size: 9px;
+    text-align: center;
+    overflow: hidden;
+    padding: 10px 37px;
+  }
+
+
+  .button--inner img {
+    width: 15px;
+    margin-left: 9px;
+  }
+
+  .button__text {
+    line-height: 33px;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    color: rgb(29, 29, 29);
+    background: none;
+    font-family: "sh";
+    margin-right: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+  }
+
+
+  @media screen 
+  and (device-width: 375px) 
+  and (device-height: 667px)  {
+
+    .btn-12 div {
+      width: 65px;
+      height: 32px;
+      font-size: 10px;
+    }
+    
+    .btn-12 div:nth-child(1) {
+
+      transform: rotateX(90deg) translateY(0px) translateZ(-1px);
+   
+    }
+
+
+    .btn-12 {
+      position: relative;
+      right: 20px;
+      bottom: 20px;
+      border: none;
+      box-shadow: none;
+      width: 77px;
+      height: 38px;
+      line-height: 42px;
+      -webkit-perspective: 230px;
+      perspective: 230px;
+  }
+
+
+  .btn-12 div:nth-child(2) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg) translateY(-4px);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+  }
+
+  .btn-12:hover div:nth-child(2) {
+   color: transparent;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg) translateY(10px) translateX(2px);
+  
+  }
+
+
+
+  .buttondow {
+    font-family: Tahoma;
+    font-size: 9px;
+    text-align: center;
+    overflow: hidden;
+    padding: 10px 37px;
+  }
+
+
+  .button--inner img {
+    width: 15px;
+    margin-left: 9px;
+  }
+
+  .button__text {
+    line-height: 33px;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    color: rgb(29, 29, 29);
+    background: none;
+    font-family: "sh";
+    margin-right: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+  }
