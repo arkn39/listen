@@ -1910,8 +1910,9 @@ margin-top: 0px;
 
   }
 
+  
   @media screen 
-  and (device-width: 475px) 
+  and (device-width: 480px) 
   {
     .card-caption-content img {
       width: 20%;
@@ -2287,7 +2288,381 @@ margin-top: 0px;
   }
 
 
+  @media screen 
+  and (device-width: 475px) 
+  {
+    .card-caption-content img {
+      width: 20%;
+      padding-right: 2.5rem;
+      display: block;
+      transform: translate3d(257px, -1017%,0 );
+      will-change: transform;
+  }
 
+    .body {
+      justify-content: center;
+    }
+    
+    .maincon {
+      width: 95%;
+    }
+
+    .lesson-butten-des {
+      width: 18.5%;
+      border-radius: 10px;
+      padding: 10px 0px;
+      margin: 4px 0px;
+  }
+
+  .lesson-butten-des p {
+    font-size: 9px;
+}
+
+.lesson-butten {
+  padding-top: 25px;
+}
+
+.title h1 {
+  font-size: 9.7vw;
+}
+
+.title h2 {
+  font-size: 4.1vw;
+}
+
+
+.header img {
+  width: 5%;
+  color: #1E1E1E;
+}
+
+
+.header {
+  width: 100%;
+  margin-left: 10px;
+  padding: 23px 0px 33px 0px;
+}
+
+
+
+.photo-box {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.card-caption h2 {
+  font-size: 19px;
+}
+
+.span2000 {
+  font-family: "sh2";
+  font-size: 0.9rem;
+}
+
+
+.card-with-hover {
+  height: 300px;
+}
+
+
+.card-with-hover:hover > .card-caption h2 {
+  padding-top: 0.6rem;
+  padding-bottom: 0.7rem;
+  padding-right: 2rem;
+  box-shadow: 0px -12px 15px 0px rgb(0 0 0 / 0%);
+}
+
+.card-with-hover > .card-caption p {
+  font-size: 12px;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 20px;
+
+}
+
+
+.card-caption-content img {
+  padding-right: 2rem;
+}
+
+
+
+.part-title-circle {
+  width: 65px;
+  height: 65px;
+
+}
+
+
+
+.part-title-circle img {
+  width: 34px;
+}
+
+.part-title-circle1 {
+  width: 65px;
+  height: 65px;
+
+}
+
+
+
+.part-title-circle1 img {
+  width: 25px;
+}
+
+.part-title-circle2 {
+  width: 65px;
+  height: 65px;
+
+}
+
+
+
+.part-title-circle2 img {
+  width: 34px;
+}
+
+.part-title-circle3 {
+  width: 65px;
+  height: 65px;
+
+}
+
+.part-title-circle3 img {
+  width: 30px;
+}
+
+.part-title-text h3 {
+  font-size: 4vw;
+}
+
+
+.part-title-text h2 {
+  font-size: 8vw;
+  padding-bottom: 5px;
+}
+
+.part-title-text {
+  margin-left: 13px;
+}
+
+
+.accordion-header::before {
+  width: 1rem;
+  height: 0.7rem;
+  margin-left: 15px;
+  margin-right: 7px;
+
+}
+
+
+.accordion-header {
+  font-size: 12px;
+  padding: 1.8rem 1rem 1.5rem 1.5rem;
+
+}
+
+
+
+
+.lessons-bg {
+  padding: 20px 0px;
+  margin-top: 75px;
+  flex-direction: column;
+  border-radius: 2rem;
+}
+
+
+
+.lesson-box {
+  width: 100%;
+  margin: 18px 0px;
+}
+
+
+.lesson-box-up-photo {
+  width: 34%;
+  height: 55px;
+}
+
+.lesson-box-up-title {
+  width: 60%;
+  margin-left: 10px;
+}
+
+
+
+.lesson-box-up-title h4 {
+  font-size: 5.7vw;
+}
+
+.lesson-box-up-title p {
+  font-size: 3vw;
+}
+
+
+
+.btn12-12 img {
+  width: 13px;
+  height: 13px;
+}
+
+.lesson-box-up-play {
+  width: 14%;
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+.lessons-bg {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 5%;
+  box-shadow: 0px 7.80555px 15.6111px rgba(22, 25, 79, 0);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 0px 0px;
+  margin-top: 38px;
+}
+
+
+
+
+
+.lesson-box-down {
+
+  justify-content: space-between;
+}
+
+.exam-title {
+  margin-top: 32px;
+}
+
+.exam-title h2 {
+
+  font-size: 30px;
+
+}
+
+
+.exam-title p {
+  font-family: 'sh';
+  font-size: 12px;
+  text-align: right;
+  line-height: 13px;
+  margin-top: 0px;
+}
+
+.exam-time {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-top: 45px;
+  align-items: center;
+}
+
+
+.exam-first-time {
+  width: 83%;
+  background: linear-gradient(97.96deg, #62A1FF -4.65%, #0066FF 121.83%), #D9D9D9;
+  border-radius: 13px;
+  color: white;
+  font-family: "sh";
+  font-size: 6.3vw;
+  padding: 20px 0px;}
+
+.exam-second-time {
+  width: 83%;
+  background: transparent;
+  background: linear-gradient(white, white) padding-box, linear-gradient(97.96deg, #B0C2F2 57.27%, #E1CFFF 121.83%) border-box;
+  border-radius: 19px;
+  border: 2px solid transparent;
+  font-family: "sh";
+  font-size: 6.3vw;
+  padding: 20px 0px;
+  cursor: no-drop;
+  margin-top: 14px;
+}
+
+.exam-third-time {
+  width: 83%;
+  background: transparent;
+  background: linear-gradient(white, white) padding-box, linear-gradient(97.96deg, #B0C2F2 57.27%, #E1CFFF 121.83%) border-box;
+  border-radius: 19px;
+  border: 2px solid transparent;
+  font-family: "sh";
+  font-size: 6.3vw;
+  padding: 20px 0px;
+  cursor: no-drop;
+  margin-top: 14px;
+}
+.exam-fourth-time {
+  width: 83%;
+  background: transparent;
+  background: linear-gradient(white, white) padding-box, linear-gradient(97.96deg, #B0C2F2 57.27%, #E1CFFF 121.83%) border-box;
+  border-radius: 19px;
+  border: 2px solid transparent;
+  font-family: "sh";
+  font-size: 6.3vw;
+  padding: 20px 0px;
+  cursor: no-drop;
+  margin-top: 14px;
+}
+
+
+
+.Attributes {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+
+.Attributes-main {
+  display: flex;
+  text-align: right;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 100px;
+  margin-right: 42px;
+  width: 100%;
+}
+
+
+
+.Attributes-main h2 {
+  font-size: 7.3vw;
+  line-height: 65px;
+  
+margin-top: 0px;
+}
+
+.Attributes-main p {
+  font-family: 'sh2';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.4vw;
+  line-height: 13px;
+  margin-top: 0px;
+}
+
+
+  }
 
 
 
