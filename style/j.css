@@ -717,8 +717,7 @@
 
 
   @media screen 
-  and (min-width: 320px)  and (max-width:374px)
-  and (device-height: 640px)  {
+  and (min-width: 320px)  and (max-width:374px){
 
     .btn-12 div {
       width: 65px;
@@ -1159,4 +1158,94 @@
 
 
 
+  @media screen 
+  and (min-width: 200px)  and (max-width:319px)
+ {
+
+    .btn-12 div {
+      width: 65px;
+      height: 32px;
+      font-size: 10px;
+    }
+    
+    .btn-12 div:nth-child(1) {
+
+      transform: rotateX(90deg) translateY(0px) translateZ(-1px);
+   
+    }
+
+
+    .btn-12 {
+      position: relative;
+      right: 20px;
+      bottom: 20px;
+      border: none;
+      box-shadow: none;
+      width: 77px;
+      height: 38px;
+      line-height: 42px;
+      -webkit-perspective: 230px;
+      perspective: 230px;
+  }
+
+
+  .btn-12 div:nth-child(2) {
+    -webkit-transform: rotateX(0deg);
+    -moz-transform: rotateX(0deg);
+    transform: rotateX(0deg) translateY(-4px);
+    -webkit-transform-origin: 50% 50% -20px;
+    -moz-transform-origin: 50% 50% -20px;
+    transform-origin: 50% 50% -20px;
+  }
+
+  .btn-12:hover div:nth-child(2) {
+   color: transparent;
+    -webkit-transform: rotateX(-90deg);
+    -moz-transform: rotateX(-90deg);
+    transform: rotateX(-90deg) translateY(10px) translateX(2px);
   
+  }
+
+
+
+  .buttondow {
+    font-family: Tahoma;
+    font-size: 9px;
+    text-align: center;
+    overflow: hidden;
+    padding: 10px 37px;
+  }
+
+
+  .button--inner img {
+    width: 15px;
+    margin-left: 9px;
+  }
+
+  .button__text {
+    line-height: 33px;
+    z-index: 2;
+    width: 50%;
+    height: 100%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-align: center;
+    color: rgb(29, 29, 29);
+    background: none;
+    font-family: "sh";
+    margin-right: 7px;
+}
+
+
+
+
+
+
+
+
+
+
+
+  }
