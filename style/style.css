@@ -755,7 +755,7 @@ margin-top: 12px;
 
 @media screen 
   and (device-width: 320px) 
-  and (device-height: 640px)  {
+   {
     .card-caption-content img {
       width: 20%;
       padding-right: 2.5rem;
@@ -1160,7 +1160,7 @@ margin-top: 0px;
 
 @media screen 
   and (device-width: 375px) 
-  and (device-height: 667px)  {
+   {
     .card-caption-content img {
       width: 20%;
       padding-right: 2.5rem;
@@ -1536,7 +1536,7 @@ margin-top: 0px;
 
   @media screen 
   and (device-width: 425px) 
-  and (device-height: 667px)  {
+  {
     .card-caption-content img {
       width: 20%;
       padding-right: 2.5rem;
