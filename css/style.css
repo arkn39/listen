@@ -177,7 +177,10 @@ ul {
 
 .menu-img {
     display: block;
-    width: 20%;
+    width: 17%;
+}
+.header-logo img {
+    width: 2.2em;
 }
 
 .header {
@@ -202,16 +205,19 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
 }
 
 .main-title {
-    font-size: 12.2vw;
+    width: 80%;
+    font-size: 11.2vw;
     line-height: 70px;
     text-align: center;
     margin-right: 0;
 }
 
 .main-dis {
+    color: rgb(236, 236, 255);
     font-size: 3.6vw;
     line-height: 34px;
     text-align: center;
@@ -225,6 +231,8 @@ ul {
 .home-about {
     font-size: 3.1vw;
     margin-right: 0px;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .home-butten {
@@ -241,9 +249,9 @@ ul {
 
 
 .home-photo img {
-    width: 95%;
+    width: 85%;
     margin-left: 13px;
-
+    margin-top: 30px;
 }
 
 
