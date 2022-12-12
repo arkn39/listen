@@ -1,0 +1,357 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3A61FF;
+}
+
+
+/*---------- Header ----------*/
+
+
+.header {
+    width: 90%;
+    display: flex;
+    margin-top: 30px;
+}
+
+.menu-img {
+    display: none;
+}
+
+.header-logo {
+    width: 50%;
+}
+
+.header-logo img {
+    width: 2.5em;
+}
+
+ul {
+    width: 50%;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'shabnam';
+    color: white;
+    z-index: 99;
+}
+
+li {
+    margin-left: 5rem;
+}
+
+
+
+/*---------- home right ----------*/
+
+
+.home-main {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 60px;
+    justify-content: center;
+}
+.home-text {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 18px;
+}
+.home-photo {
+    width: 50%;
+    animation-name: home;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+
+.main-title {
+    font-family: 'moraba';
+    color: white;
+    font-size: 5.5vw;
+    line-height: 105px;
+    
+    align-items: center;
+    text-align: right;
+    margin-right: 35px;
+}
+
+.saye {
+    filter: drop-shadow(0px 0px 0px #ffffff);
+    animation-name: saye;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.main-dis {
+    font-family: 'shabnam';
+    font-size: 1.30vw;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: white;
+    margin-top: 20px;
+    margin-right: 35px;
+}
+
+.home-butten {
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    margin-top: 55px;
+    margin-right: 35px;
+    align-items: center;
+}
+
+.home-butten-sign {
+    width: 44%;
+    border-radius: 10px;
+    background-color: #070FCA;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+}
+
+.home-butten-sign-text {
+    color: white;
+    font-family: 'shabnam';
+    font-size: 1.1vw;
+    padding: 20px 0px;
+}
+
+.home-butten-sign img {
+    width: 14%;
+}
+
+.home-about {
+    color: #c8beff;
+    font-family: 'shabnam';
+    font-size: 1.1vw;
+    margin-right: 45px;
+    transition: all .3s ease-in-out;
+}
+
+.home-about:hover{
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.home-photo img {
+    width: 90%;
+    margin-left: 13px;
+}
+
+
+
+
+
+
+@media only screen and (max-width: 425px) and (min-width: 375px) 
+
+
+{
+
+ul {
+    display: none;
+}
+.menu {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.menu-img {
+    display: block;
+    width: 20%;
+}
+
+.header {
+    width: 80%;
+}
+
+.home-main {
+    margin-top: 40px;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.home-photo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.home-text {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-title {
+    font-size: 12.2vw;
+    line-height: 70px;
+    text-align: center;
+    margin-right: 0;
+}
+
+.main-dis {
+    font-size: 3.6vw;
+    line-height: 34px;
+    text-align: center;
+    margin-right: 0;
+}
+
+.home-butten-sign-text {
+    font-size: 3.1vw;
+}
+
+.home-about {
+    font-size: 3.1vw;
+    margin-right: 0px;
+}
+
+.home-butten {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 0px;
+    align-items: center;
+}
+
+.home-butten-sign {
+    width: 65%;
+}
+
+
+.home-photo img {
+    width: 95%;
+    margin-left: 13px;
+
+}
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'moraba';
+    src: url(../fonts/Morabba-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'shabnam';
+    src: url(../fonts/Shabnam-Medium.ttf);
+}
+
+
+
+
+
+@keyframes home {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(-22px);}
+    100% {transform: translateY(0px);}
+    
+  }
+
+  @keyframes saye {
+
+    0%{ filter: drop-shadow(0px 0px 0px #ffffff75) }
+    50%{filter: drop-shadow(5px 8px 3px #0a1e8fc7) }
+    100%{filter: drop-shadow(0px 0px 0px #ffffff4d)}
+    
+  }
+
+
+
+
+
+
+.li1,.li2,.li3,.li4 {
+	position: relative;
+    display: flex;
+	color:#ffffff;
+    justify-content: center;
+}
+li:after{
+	content:"";
+	display:block;
+	position: absolute;
+	top:140%;
+	width:0px;
+	height:10%;
+	background-color:#ffffff;
+    border-radius: 20%;
+	z-index:-1;
+	transition: all .3s ease-in-out;
+}
+li:hover:after{
+	width:100%;
+}
+
+
+.cursor,
+.cursor2,
+.cursor3{
+	position: fixed;
+	border-radius: 50%;	
+	transform: translateX(-50%) translateY(-50%);
+	pointer-events: none;
+	left: -100px;
+	top: 50%;
+	mix-blend-mode:overlay;
+	-webkit-transition: all 300ms linear;
+	transition: all 300ms linear;
+}
+.cursor{
+	background-color: #fff;
+	height: 0;
+	width: 0;
+	z-index: 99999;
+}
+.cursor2,.cursor3{
+	height: 36px;
+	width: 36px;
+	z-index:99998;
+	-webkit-transition:all 0.3s ease-out;
+	transition:all 0.3s ease-out
+}
+.cursor2.hover,
+.cursor3.hover{
+	-webkit-transform:scale(2) translateX(-25%) translateY(-25%);
+	transform:scale(2) translateX(-25%) translateY(-25%);
+	border:none
+}
+.cursor2{
+	border: 2px solid #fff;
+}
+.cursor2.hover{
+	background: rgb(0, 0, 0);
+	border-color: transparent;
+}
