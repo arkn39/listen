@@ -32,3 +32,23 @@
         t.addEventListener("mouseover", n), t.addEventListener("mouseout", s)
     }
 
+    class _ {
+        static limit(value, min, max) {
+            return Math.min(Math.max(value, min), max);
+        }
+    
+        static protectNumber(value, fallbackValue) {
+            return typeof value === 'number' ? value : fallbackValue;
+        }
+    }
+    
+    $(function() {
+        $(".navigation-tab-item").click(function() {
+          $(".navigation-tab-item").removeClass("active");
+          $(this).addClass("active");
+          $(".navigation-tab-overlay").css({
+            left: $(this).prevAll().length * 130 + "px"
+          });
+        });
+      });
+

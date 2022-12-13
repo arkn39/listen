@@ -101,7 +101,7 @@ li {
     display: flex;
     align-items: center;
     text-align: right;
-    color: white;
+    color: rgb(236, 236, 255);
     margin-top: 35px;
     margin-right: 35px;
 }
@@ -117,6 +117,8 @@ li {
 }
 
 .home-butten-sign {
+    position: relative;
+    display: inline-block;
     width: 44%;
     border-radius: 10px;
     background-color: #070FCA;
@@ -125,6 +127,36 @@ li {
     flex-direction: row-reverse;
     justify-content: space-evenly;
 }
+.btn-15 {
+    background: #070FCA;
+    border: none;
+    z-index: 1;
+  }
+  .btn-15:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    background-color: #3237c7;
+    border-radius: 10px;
+    opacity: 0;
+    
+    transition: all 0.7s ease;
+  }
+  .btn-15:hover {
+    color: #fff;
+  }
+  .btn-15:hover:after {
+    opacity: 100;
+    left: 0;
+    width: 100%;
+  }
+  .btn-15:active {
+    top: 2px;
+  }
 
 .home-butten-sign-text {
     color: white;
@@ -224,7 +256,7 @@ ul {
 }
 
 .main-dis {
-    color: rgb(236, 236, 255);
+    
     font-size: 3.6vw;
     line-height: 34px;
     text-align: center;
@@ -258,7 +290,11 @@ ul {
 
 
 
-
+.cursor,
+.cursor2,
+.cursor3{
+	display: none;
+}
 
 
 
@@ -367,3 +403,15 @@ li:hover:after{
 	background: rgb(0, 0, 0);
 	border-color: transparent;
 }
+
+
+
+
+
+
+
+
+
+
+
+
