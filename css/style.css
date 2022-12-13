@@ -45,9 +45,7 @@ ul {
     z-index: 99;
 }
 
-li {
-    margin-left: 5rem;
-}
+
 
 
 
@@ -346,6 +344,7 @@ ul {
     display: flex;
 	color:#ffffff;
     justify-content: center;
+    margin-left: 5rem;
 }
 li:after{
 	content:"";
@@ -409,9 +408,76 @@ li:hover:after{
 
 
 
+:root {
+    --highlight: #5756e6;
+  }
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap");
 
 
+.navbar {
+    border-radius: 20px 20px 20px 20px;
+    background-color: rgb(255, 255, 255);
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 14px 28px #8f9cd469, 0 10px 10px #8f9cd461;
+}
 
-
-
-
+  .list-item {
+    list-style-type: none;
+    flex-basis: 100%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #555;
+    transform: translateY(0);
+    transition: transform 0.5s ease, opacity 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .list-item-name {
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+    transform: translate(0, 50px);
+    transition: transform 0.5s ease, opacity 0.2s ease;
+    opacity: 0;
+  }
+  
+  .list-item:hover {
+    color: var(--highlight);
+    transform: translateY(-6px);
+  }
+  .list-item:hover .list-item-name {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  
+  @media (max-width: 425px) {
+    
+    .navbar {
+        position: fixed;
+        top: 89px;
+        right: 14px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 20%;
+        overflow: hidden;
+        padding-bottom: 2px;
+        justify-content: space-around;
+    }
+  
+    .list-item {
+      flex-basis: auto;
+    }
+  
+    .list-item:hover .list-item-name {
+      transform: translateY(25px);
+    }
+  }
