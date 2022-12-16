@@ -1,0 +1,47 @@
+.menu-img {
+    display: none;
+}
+
+.header-logo {
+    width: 50%;
+}
+
+.header-logo img {
+    width: 2.5em;
+}
+
+.header-lable {
+    width: 50%;
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'shabnam';
+    color: white;
+    z-index: 99;
+}
+
+
+
+
+
+
+
+
+.header-lable {
+    display: none;
+}
+.menu {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.menu-img {
+    display: block;
+    width: 17%;
+}
+.header-logo img {
+    width: 2.2em;
+}
