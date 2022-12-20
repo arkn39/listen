@@ -17,6 +17,9 @@
 }
 
 
+
+
+
 /*---------- Header ----------*/
 
 .header {
@@ -111,10 +114,18 @@
 }
 
 
+/*---------- Header ----------*/
 
 
 
-/*---------- home right ----------*/
+
+
+
+
+
+
+
+/*---------- home ----------*/
 
 
 .home-main {
@@ -178,6 +189,7 @@
     margin-top: 55px;
     margin-right: 35px;
     align-items: center;
+    padding-bottom: 150px;
 }
 
 .home-butten-sign {
@@ -204,7 +216,7 @@
     top: 0;
     right: 0;
     z-index: -1;
-    background-color: #3237c7;
+    background-color: #2e2e2e;
     border-radius: 10px;
     opacity: 0;
     
@@ -251,8 +263,119 @@
 }
 
 
+/*---------- home ----------*/
 
 
+
+
+
+
+
+
+
+/*---------- apps ----------*/
+
+
+.apps-butten {
+  width: 74%;
+  display: flex;
+  justify-content: space-around;
+  position:absolute;
+  margin-top: 150px;
+}
+
+.apps-butten-top, .apps-butten-bottom {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+.apps-butten-des {
+
+  width: 41%;
+  border-radius: 45px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  filter: drop-shadow(0px 4px 49px rgba(0, 0, 0, 0.15));
+}
+
+.apps-butten-text {
+  width: 58%;
+  display: flex;
+  flex-direction: column;
+  padding: 21px 2px 21px 24px;
+}
+
+.apptitle {
+  font-family: 'latobold';
+  font-size: 1em;
+}
+.appdis{
+  font-family: 'latoreg';
+  font-size: 0.8em;
+  margin-top: 2px;
+}
+.apps-butten-icon {
+  width: 42%;
+  display: flex;
+  align-items: center;
+}
+
+.ae {
+  width: 85%;
+  filter:drop-shadow(1px 9px 5px #5454b5c0);
+}
+
+.ps {
+  width: 97%;
+  filter:drop-shadow(1px 9px 5px #3a3afcc0);
+}
+
+
+.vs {
+  width: 62%;
+  filter:drop-shadow(1px 9px 5px #3a88fcc0);
+}
+
+
+
+/*---------- apps ----------*/
+
+
+
+
+.after-effects {
+  width: 100%;
+  height: 100vh;
+  background-color: white ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*---------- responsive ----------*/
 
 
 @media only screen and (max-width: 425px) and (min-width: 375px) 
@@ -341,6 +464,32 @@
 
 
 
+.apps-butten {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.apps-butten-top, .apps-butten-bottom {
+  width: 90%;
+  margin-top: 15px;
+  justify-content: space-evenly;
+}
+
+.apps-butten-des {
+  width: 46%;
+}
+.apptitle {
+  font-size: 0.8em;
+}
+.appdis {
+  font-size: 0.7em;
+}
+
+.apps-butten-text {
+  width: 58%;
+  padding: 20px 2px 20px 24px;
+}
 }
 
 
@@ -350,41 +499,9 @@
 
 
 
-@font-face {
-    font-family: 'moraba';
-    src: url(../fonts/Morabba-Bold.ttf);
-}
-
-@font-face {
-    font-family: 'shabnam';
-    src: url(../fonts/Shabnam-Medium.ttf);
-}
 
 
-
-
-
-@keyframes home {
-    0% {transform: translateY(0px);}
-    50% {transform: translateY(-15px);}
-    100% {transform: translateY(0px);}
-    
-  }
-
-  @keyframes saye {
-
-    0%{ filter: drop-shadow(0px 0px 0px #ffffff75) }
-    50%{filter: drop-shadow(5px 8px 3px #0a1e8fc7) }
-    100%{filter: drop-shadow(0px 0px 0px #ffffff4d)}
-    
-  }
-
-
-
-
-
-
-
+/*---------- cursor ----------*/
 
 
 .cursor,
@@ -428,6 +545,62 @@
 }
 
 
+/*---------- cursor ----------*/
 
 
 
+
+
+
+
+
+
+
+
+
+/*---------- fonts ----------*/
+
+
+@font-face {
+    font-family: 'moraba';
+    src: url(../fonts/Morabba-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'shabnam';
+    src: url(../fonts/Shabnam-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'latobold';
+  src: url(../fonts/Lato-Bold.ttf);
+}
+@font-face {
+  font-family: 'latoreg';
+  src: url(../fonts/Lato-Regular.ttf);
+}
+
+/*---------- fonts ----------*/
+
+
+
+
+
+/*---------- keyframes ----------*/
+
+@keyframes home {
+    0% {transform: translateY(0px);}
+    50% {transform: translateY(-15px);}
+    100% {transform: translateY(0px);}
+    
+  }
+
+  @keyframes saye {
+
+    0%{ filter: drop-shadow(0px 0px 0px #ffffff75) }
+    50%{filter: drop-shadow(5px 8px 3px #0a1e8fc7) }
+    100%{filter: drop-shadow(0px 0px 0px #ffffff4d)}
+    
+  }
+
+/*---------- keyframes ----------*/
